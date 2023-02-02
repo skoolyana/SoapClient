@@ -29,7 +29,6 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 import org.json.JSONObject; 
  
 
@@ -37,7 +36,7 @@ import org.json.JSONObject;
 
 
 
-public class SoapClient {
+public class SoapClientRunning {
 	// SOAP Request
 	/**
 	 *
@@ -207,20 +206,6 @@ public class SoapClient {
 		soapResponse.writeTo(System.out);
 		System.out.println();
 		
-		
-		SOAPBody soapBodyResponse = soapResponse.getSOAPBody();
-		NodeList nodes = soapBodyResponse.getChildNodes();
-		for (int i = 0; i < nodes.getLength(); i++) {
-		    org.w3c.dom.Node node = nodes.item(i);
-		    if (node.getNodeType() == Node.ELEMENT_NODE) {
-		        String namespaceURI = node.getNamespaceURI();
-		        if (namespaceURI != null && namespaceURI.equals(myNamespaceURI)) {
-		            Element childElement = (Element) node;
-		            System.out.println("Child element name: " + childElement.getNodeName());
-		        }
-		    }
-		}
-
 	
 
 		// Get SoapPart of the response as String.
@@ -232,8 +217,12 @@ public class SoapClient {
 		System.out.println("respAsString=" + respAsString);
 				soapConnection.close();
 
+				System.out.println("----------");
+				
+				System.out.println(XMLToJSONConverter.xmlToJson(respAsString));
+				
 
-
+				
 	}
 
 	private static String toStringDocument(Document doc) throws TransformerException {

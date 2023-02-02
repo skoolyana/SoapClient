@@ -1,0 +1,28 @@
+{
+    "InventoryAvailabilitySv": {
+        "InventoryAvailabilitySvRQ": {
+            "MajorVersion": "1",
+            "ClientId": "DVC-MOCK",
+            "Username": "DVC-MOCK",
+            "InventoryAvailabilityRQ": {
+                "InventoryProduct": {
+                    "Sequence": "1",
+                    "ComponentCode": "CHECKEDBAG_10KG",
+                    "InventoryKeyCode": "CARRIER_AND_FLIGHT_NUMBER_INVKEY",
+                    "FreeSale": "false",
+                    "InventoryComponent": {
+                        "Sequence": "1",
+                        "ConsumptionDateTime": "2022-12-20T13:34:00.000",
+                        "SaleDateTime": "2022-12-12T10:51:08.670",
+                        "AvailabilityInfo": {
+                            "Amount": "3"
+                        },
+                        "GroupRef": {
+                            "GroupIDRef": "ID-9"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
